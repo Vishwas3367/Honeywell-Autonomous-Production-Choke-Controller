@@ -1,0 +1,12 @@
+Honeywell Hackathon 2026
+
+GitHub Repository:
+https://github.com/Vishwas3367/Honeywell-Autonomous-Production-Choke-Controller
+
+The repository contains:
+• Complete Python source code
+• Dataset
+• Results
+• Documentation
+• Report
+• Presentation
