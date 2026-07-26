@@ -127,3 +127,29 @@ save_plot("Step", "FLP", "Flowline Pressure", "Pressure", "flp.png")
 save_plot("Step", "BHP", "Bottomhole Pressure", "Pressure", "bhp.png")
 
 print("Graphs generated successfully!")
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read simulation results
+df = pd.read_csv("data/results.csv")   # Change path if needed
+
+plt.figure(figsize=(10,5))
+
+plt.plot(df["Step"], df["TargetFlow"],
+         label="Target Oil Rate",
+         linewidth=2)
+
+plt.plot(df["Step"], df["Flow"],
+         label="Actual Oil Rate",
+         linewidth=2)
+
+plt.xlabel("Simulation Step")
+plt.ylabel("Oil Rate (bbl/hr)")
+plt.title("Target Oil Rate vs Actual Oil Rate")
+plt.grid(True)
+plt.legend()
+
+plt.tight_layout()
+plt.savefig("graphs/oil_rate_vs_target.png", dpi=300)
+plt.show()
